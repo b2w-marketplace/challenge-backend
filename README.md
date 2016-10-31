@@ -42,7 +42,7 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 ## Critérios
 
 - Qualidade e organização de código.
-- Aderencia aos requisitos solicitados.
+- Aderência aos requisitos solicitados.
 - Linguagem Java 6 ou superior.
 - Fica a escolha do candidato a utilização de qualquer framework.
 
