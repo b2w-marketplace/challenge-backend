@@ -1,6 +1,6 @@
 # Desafio Backend BIT - SP
 
-Desenvolver um serviço rest que consulta a API de Item [(link da API)](http://www.mocky.io/v2/57dfec211000009020598073) e realiza um filtro pela data de acordo com os parametros enviados na requisição HTTP.
+Desenvolver um serviço rest que consulta a API de Item [(link da API)](http://www.mocky.io/v2/58177cad1000008701cc7fb5) e realiza um filtro pela data de acordo com os parametros enviados na requisição HTTP.
 
 O serviço deve atender a seguinte definição:
 
