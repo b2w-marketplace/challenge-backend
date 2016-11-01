@@ -27,9 +27,9 @@ public class ItemController {
 		List<Item> itens = itemService.getItens(dataInit, dataFim);
 		
 		if (itens.isEmpty()) {
-			return new ResponseEntity<List<Item>>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 
-		return new ResponseEntity<List<Item>>(itemService.getItens(dataInit, dataFim), HttpStatus.OK);
+		return new ResponseEntity<>(itemService.getItens(dataInit, dataFim), HttpStatus.OK);
 	}
 }

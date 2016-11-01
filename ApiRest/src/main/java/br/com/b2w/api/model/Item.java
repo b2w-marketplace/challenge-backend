@@ -15,9 +15,6 @@ public class Item  implements Serializable{
 	private Date date;
 	private Dimension dimension;
 	
-	public Item() {
-	}
-
 	public String getName() {
 		return name;
 	}
