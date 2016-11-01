@@ -3,9 +3,6 @@ package br.com.b2w.api.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Item  implements Serializable{
 
 	/**

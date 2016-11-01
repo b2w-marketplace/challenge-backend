@@ -2,9 +2,6 @@ package br.com.b2w.api.model;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Dimension implements Serializable{
 
 	/**
@@ -50,11 +47,5 @@ public class Dimension implements Serializable{
 
 	public void setLength(double length) {
 		this.length = length;
-	}
-
-	@Override
-	public String toString() {
-		return "Dimension [weight=" + weight + ", height=" + height + ", width=" + width + ", length=" + length + "]";
-	}
-	
+	}	
 }
