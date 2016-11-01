@@ -23,6 +23,12 @@ public class ItemController {
 	@RequestMapping(value = "/item/{dataInit}/{dataFim}", method = RequestMethod.GET)
 	public ResponseEntity<List<Item>> findItemByDate(@PathVariable("dataInit") String dataInit,
 			@PathVariable("dataFim") String dataFim) throws ParseException {
+		
+		List<Item> itens = itemService.getItens(dataInit, dataFim);
+		
+		if (itens.isEmpty()) {
+			return new ResponseEntity<List<Item>>(HttpStatus.NO_CONTENT);
+		}
 
 		return new ResponseEntity<List<Item>>(itemService.getItens(dataInit, dataFim), HttpStatus.OK);
 	}
