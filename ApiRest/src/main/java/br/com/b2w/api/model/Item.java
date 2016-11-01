@@ -1,7 +1,12 @@
 package br.com.b2w.api.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 public class Item  implements Serializable{
 
@@ -12,7 +17,9 @@ public class Item  implements Serializable{
 	
 	private String name;
 	private String code;
-	private Date date;
+	@JsonDeserialize(using = LocalDateDeserializer.class)
+	@JsonSerialize(using = LocalDateSerializer.class)
+	private LocalDate date;
 	private Dimension dimension;
 	
 	public String getName() {
@@ -31,11 +38,11 @@ public class Item  implements Serializable{
 		this.code = code;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 

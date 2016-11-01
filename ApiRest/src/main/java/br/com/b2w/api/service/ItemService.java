@@ -2,9 +2,8 @@ package br.com.b2w.api.service;
 
 import static java.util.stream.Collectors.toList;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.core.ParameterizedTypeReference;
@@ -20,23 +19,25 @@ import br.com.b2w.api.model.Item;
 @Component
 public class ItemService {
 
-	public List<Item> getItens(String dataInit, String dataFim) throws ParseException {
+	public List<Item> getItens(String dataInit, String dataFim) {
 
-		Date dateInit = parse(dataInit);
-		Date dateFim = parse(dataFim);
+		LocalDate dateInit = parse(dataInit);
+		LocalDate dateFim = parse(dataFim);
 
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<List<Item>> itemResponse = restTemplate.exchange(
 				"http://www.mocky.io/v2/5817803a1000007d01cc7fc9", HttpMethod.GET, null,
-				new ParameterizedTypeReference<List<Item>>() {});
+				new ParameterizedTypeReference<List<Item>>() {
+				});
 
 		return itemResponse.getBody().stream()
-				.filter(item -> item.getDate().after(dateInit) && 
-						item.getDate().before(dateFim)).collect(toList());
+				.filter(item -> (item.getDate().isAfter(dateInit) || item.getDate().equals(dateInit))
+						&& (item.getDate().isBefore(dateFim) || item.getDate().equals(dateFim)))
+				.collect(toList());
 	}
 
-	private Date parse(String data) throws ParseException {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-		return formatter.parse(data);
+	private LocalDate parse(String data) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		return LocalDate.parse(data, formatter);
 	}
 }

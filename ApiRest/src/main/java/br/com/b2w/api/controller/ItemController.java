@@ -1,6 +1,5 @@
 package br.com.b2w.api.controller;
 
-import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ public class ItemController {
 
 	@RequestMapping(value = "/item", method = RequestMethod.GET)
 	public ResponseEntity<List<Item>> findItemByDate(@RequestParam("begindate") String dataInit,
-			@RequestParam("finaldate") String dataFim) throws ParseException {
+			@RequestParam("finaldate") String dataFim) {
 		
 		List<Item> itens = itemService.getItens(dataInit, dataFim);
 		
