@@ -31,7 +31,8 @@ public class ItemService {
 				new ParameterizedTypeReference<List<Item>>() {});
 
 		return itemResponse.getBody().stream()
-				.filter(item -> item.getDate().after(dateInit) && item.getDate().before(dateFim)).collect(toList());
+				.filter(item -> item.getDate().after(dateInit) && 
+						item.getDate().before(dateFim)).collect(toList());
 	}
 
 	private Date parse(String data) throws ParseException {
