@@ -29,6 +29,6 @@ public class ItemController {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 
-		return new ResponseEntity<>(itemService.getItens(dataInit, dataFim), HttpStatus.OK);
+		return new ResponseEntity<>(itens, HttpStatus.OK);
 	}
 }
