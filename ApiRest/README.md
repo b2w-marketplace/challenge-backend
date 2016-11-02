@@ -1,4 +1,4 @@
-Sistema foi criado com Spring boot, para usar é só clonar com quelquer IDE e executar a classe App.java.
+Sistema foi criado com Spring boot, para usar é só clonar com qualquer IDE e executar a classe App.java.
 
 
 Request
