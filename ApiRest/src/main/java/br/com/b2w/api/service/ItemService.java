@@ -22,7 +22,7 @@ public class ItemService {
 	private static final String URL_BASE = "http://www.mocky.io/v2/5817803a1000007d01cc7fc9";
 
 	public List<Item> getItens(String dataInit, String dataFim) {
-		return getItensAndFilter(Util.parse(dataInit), Util.parse(dataFim));
+		return getItensAndFilter(Util.stringToLocalDate(dataInit), Util.stringToLocalDate(dataFim));
 	}
 
 	private List<Item> getItensAndFilter(LocalDate dateInit, LocalDate dateFim) {
