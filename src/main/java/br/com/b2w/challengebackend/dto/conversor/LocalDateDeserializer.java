@@ -1,4 +1,4 @@
-package br.com.b2w.challengebackend.conversor;
+package br.com.b2w.challengebackend.dto.conversor;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;

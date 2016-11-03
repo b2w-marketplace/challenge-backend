@@ -2,6 +2,8 @@ package br.com.b2w.challengebackend.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
 /**
