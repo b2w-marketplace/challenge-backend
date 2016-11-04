@@ -1,14 +1,5 @@
 package br.com.b2w.challengebackend.controllers;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
-import br.com.b2w.challengebackend.dto.Item;
-import br.com.b2w.challengebackend.dto.MensagemErro;
-import br.com.b2w.challengebackend.exception.FalhaConsultaItemException;
-import br.com.b2w.challengebackend.exception.ItemNaoEncotradoException;
-import br.com.b2w.challengebackend.services.ItensService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -18,9 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
@@ -28,11 +18,20 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import br.com.b2w.challengebackend.dto.Item;
+import br.com.b2w.challengebackend.dto.MensagemErro;
+import br.com.b2w.challengebackend.exception.FalhaConsultaItemException;
+import br.com.b2w.challengebackend.exception.ItemNaoEncotradoException;
+import br.com.b2w.challengebackend.services.ItensService;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 /**
  * Created by anderson on 03/11/16.
  */
 
-@RestControllerAdvice
+@RestController
 @RequestMapping("/challenge-backend")
 public class ItensController {
 
@@ -41,7 +40,7 @@ public class ItensController {
     @Autowired
     ItensService service;
 
-    @RequestMapping(value = "/item/", method = RequestMethod.GET, produces = {APPLICATION_JSON_VALUE, APPLICATION_JSON_UTF8_VALUE})
+    @RequestMapping(value = "/item", method = RequestMethod.GET, produces = {APPLICATION_JSON_VALUE, APPLICATION_JSON_UTF8_VALUE})
     public ResponseEntity<List<Item>> pesquisarItensProduto(@RequestParam(required = true, name = "begindate") @DateTimeFormat(pattern = FORMATO_DATA) final Date inicio, @RequestParam(required = true, name = "finaldate") @DateTimeFormat(pattern = FORMATO_DATA) final Date fim) throws ItemNaoEncotradoException, FalhaConsultaItemException {
 
         LocalDateTime pInicio = LocalDateTime.ofInstant(inicio.toInstant(), ZoneId.systemDefault());

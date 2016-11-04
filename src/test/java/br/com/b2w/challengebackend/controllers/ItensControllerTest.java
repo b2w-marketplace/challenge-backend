@@ -34,7 +34,7 @@ public class ItensControllerTest {
 
     private static final String URL_LISTA_ITEM_PRODUTOS = "http://www.mocky.io/v2/5817803a1000007d01cc7fc9";
 
-    private static final String URL = "/challenge-backend/item/";
+    private static final String URL = "/challenge-backend/item";
 
     private static final DateTimeFormatter formata = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 

@@ -11,7 +11,7 @@ A JDK foi Open JDK versão 8 (Java 8);
 Framework de setup do projeto o Spring Boot versão 1.5;
 
 ```
-#### Desing das
+#### Desing das Classes
 
 Foram criadas as classes de Controle, Service, DTO e Classes de Test.
 Prática usada para o teste foi TDD.
