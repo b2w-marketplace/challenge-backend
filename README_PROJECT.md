@@ -35,11 +35,3 @@ Use o comando:
 
 mvn clean package (neste caso os teste serão executados para o processo de build)
 mvn clean package -Dmaven.test.skip=true (para não compilar com execução dos testes)
-
-
-#### Executar o serviço
-
-```
-curl http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=10-10-2016
-
-```
