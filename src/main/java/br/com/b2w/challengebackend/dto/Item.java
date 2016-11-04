@@ -1,8 +1,11 @@
 package br.com.b2w.challengebackend.dto;
 
-import br.com.b2w.challengebackend.dto.conversor.LocalDateDeserializer;
+import br.com.b2w.challengebackend.dto.conversor.LocalDateTimeDeserializer;
+import br.com.b2w.challengebackend.dto.conversor.LocalDateTimeSerializer;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -16,7 +19,8 @@ public class Item implements Serializable {
     private String nome;
     @JsonProperty("code")
     private Long codigo;
-    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonProperty("date")
     private LocalDateTime data;
     @JsonProperty("dimension")

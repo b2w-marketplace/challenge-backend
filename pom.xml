@@ -34,6 +34,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>br.com.b2w.challengebackend</groupId>
+			<artifactId>challengebackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
     <build>

@@ -12,15 +12,15 @@ import java.time.format.DateTimeFormatter;
  * Created by anderson on 03/11/16.
  */
 
-public class LocalDateDeserializer extends StdDeserializer<LocalDateTime> {
+public class LocalDateTimeDeserializer extends StdDeserializer<LocalDateTime> {
 
     private static final String FORMATO_DATA;
 
     static {
-        FORMATO_DATA = "yyyy-MM-dd'T'HH:mm:ss.SSSX";
+        FORMATO_DATA = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     }
 
-    public LocalDateDeserializer() {
+    public LocalDateTimeDeserializer() {
         super(LocalDateTime.class);
     }
 

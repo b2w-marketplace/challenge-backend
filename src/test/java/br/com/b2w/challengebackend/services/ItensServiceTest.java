@@ -1,5 +1,6 @@
 package br.com.b2w.challengebackend.services;
 
+import br.com.b2w.challengebackend.factory.TestFactory;
 import br.com.b2w.challengebackend.exception.FalhaConsultaItemException;
 import br.com.b2w.challengebackend.exception.ItemNaoEncotradoException;
 import org.assertj.core.api.Assertions;
@@ -15,10 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
-import br.com.b2w.challengebackend.dto.Dimensao;
 import br.com.b2w.challengebackend.dto.Item;
 
 /**
@@ -37,17 +35,17 @@ public class ItensServiceTest {
 
     @Test
     public void deveraRetornarItemProdutoPorDataInicioEDataFim() {
-        given(this.rest.getForEntity(URL_LISTA_ITEM_PRODUTOS, Item[].class)).willReturn(this.retornoMock());
+        given(this.rest.getForEntity(URL_LISTA_ITEM_PRODUTOS, Item[].class)).willReturn(TestFactory.criarRetornoMockArrayItem());
 
         LocalDateTime inicio = LocalDateTime.of(2016, 10, 1, 0, 0, 0, 0);
         LocalDateTime fim = LocalDateTime.of(2016, 10, 31, 0, 0, 0, 0);
 
-        Assertions.assertThat(this.service.consultarItemProduto(inicio, fim)).isEqualTo(this.resposta());
+        Assertions.assertThat(this.service.consultarItemProduto(inicio, fim)).isEqualTo(TestFactory.criarListaItem());
     }
 
     @Test(expected = ItemNaoEncotradoException.class)
     public void deveraRetornarExcessaoDeResultadoNaoEncontrado() {
-        given(this.rest.getForEntity(URL_LISTA_ITEM_PRODUTOS, Item[].class)).willReturn(this.retornoMock());
+        given(this.rest.getForEntity(URL_LISTA_ITEM_PRODUTOS, Item[].class)).willReturn(TestFactory.criarRetornoMockArrayItem());
 
         LocalDateTime inicio = LocalDateTime.of(2016, 8, 1, 0, 0, 0, 0);
         LocalDateTime fim = LocalDateTime.of(2016, 8, 31, 0, 0, 0, 0);
@@ -134,69 +132,5 @@ public class ItensServiceTest {
         this.service.consultarItemProduto(inicio, fim);
     }
 
-
-    private ResponseEntity<Item[]> retornoMock() {
-        Item[] itens = new Item[3];
-
-        LocalDateTime data = LocalDateTime.of(2016, 10, 1, 14, 30, 37, 40);
-        LocalDateTime dataAntiga = LocalDateTime.of(2016, 9, 23, 14, 30, 37, 40);
-
-        Dimensao dimensao = new Dimensao();
-        dimensao.setAltura(Double.valueOf(10.5D));
-        dimensao.setComprimento(Double.valueOf(10.5D));
-        dimensao.setLargura(Double.valueOf(10.5D));
-        dimensao.setPeso(Double.valueOf(10.5D));
-
-        Item item = new Item();
-        item.setNome("Celular");
-        item.setCodigo(Long.valueOf(1L));
-        item.setData(data);
-        item.setDimensao(dimensao);
-        itens[0] = item;
-
-        item = new Item();
-        item.setNome("Xbox");
-        item.setCodigo(Long.valueOf(2L));
-        item.setData(data);
-        item.setDimensao(dimensao);
-        itens[1] = item;
-
-        item = new Item();
-        item.setNome("Televisao");
-        item.setCodigo(Long.valueOf(3L));
-        item.setData(dataAntiga);
-        item.setDimensao(dimensao);
-        itens[2] = item;
-
-        return new ResponseEntity(itens, HttpStatus.OK);
-    }
-
-    private List<Item> resposta() {
-        ArrayList itens = new ArrayList();
-
-        LocalDateTime data = LocalDateTime.of(2016, 10, 1, 14, 30, 37, 40);
-
-        Dimensao dimensao = new Dimensao();
-        dimensao.setAltura(Double.valueOf(10.5D));
-        dimensao.setComprimento(Double.valueOf(10.5D));
-        dimensao.setLargura(Double.valueOf(10.5D));
-        dimensao.setPeso(Double.valueOf(10.5D));
-
-        Item item = new Item();
-        item.setNome("Celular");
-        item.setCodigo(Long.valueOf(1L));
-        item.setData(data);
-        item.setDimensao(dimensao);
-        itens.add(item);
-
-        item = new Item();
-        item.setNome("Xbox");
-        item.setCodigo(Long.valueOf(2L));
-        item.setData(data);
-        item.setDimensao(dimensao);
-        itens.add(item);
-
-        return itens;
-    }
 }
 
