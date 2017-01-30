@@ -50,3 +50,28 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 Crie um Fork desse repositório e nos envie um **pull request**
 
 Não esqueça de criar um README para ensinar como rodamos seu projeto :sunglasses:
+
+
+##Sistema que compreende:
+- Busca de Itens por range de datas
+
+##Tecnologias utilizadas:
+- Spring 4
+- Spring-data
+- Hibernate
+- Jackson 2
+- Embedded Jetty 9 (br.com.munieri.boot.Main.java)
+
+
+### Para os testes Integrados
+- Rest-assured
+
+### Banco de dados
+O Banco de dados esta configurado no pacote [br.com.munieri.boot].
+Foi utilizado um banco in-memory(hsqldb) para fins de teste e persistencia.
+
+
+## Serviços
+###Serviço de busca
+O servico esta documentado atraves do teste integrado em ItemEndpointIT.java
+
