@@ -1,52 +1,11 @@
-# Desafio Backend BIT - SP
+Challenge Backend
 
-Desenvolver um serviço rest que consulta a API de Item [(link da API)](http://www.mocky.io/v2/5817803a1000007d01cc7fc9) e com base no resultado realiza um filtro pela data de acordo com os parametros enviados na requisição HTTP.
+Para executar siga os seguintes passos:
 
-O serviço deve atender a seguinte definição:
+sh $ git clone $ cd challenge-backend $ mvn clean install
 
-#### Request
-```
-GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=10-10-2016
-```
-#### Response
-```
-[
-  {
-    "name": "Impressora",
-    "code": "5",
-    "date": "2016-10-05T14:30:37.040Z",
-    "dimension": {
-      "weight": 10.5,
-      "height": 10.5,
-      "width": 10.5,
-      "length": 10.5
-    }
-  },
-  {
-    "name": "Fifa2017",
-    "code": "6",
-    "date": "2016-10-06T14:30:37.040Z",
-    "dimension": {
-      "weight": 10.5,
-      "height": 10.5,
-      "width": 10.5,
-      "length": 10.5
-    }
-  },
-  .
-  .
-  .
-]
-```
+$ Projeto foi desenvolvido com Spring Boot e Java 8, $ após executar o maven, siga os seguintes passos:
 
-## Critérios
+$ Dentro do Eclipse abra o package com.sistema.mvc.application; $ Clique na classe Application $ Execute o programa como se fosse um aplicativo J2SE, isso mesmo não precisa instalar o Tomcat pois o Spring Boot já tem ele embutido. $ Botão direito do mouse Run As > Java Application $ Aguardem o servidor subir, enquanto isso abra o browser (IE, Firefox, Chrome) de sua preferência. $ Acesse com o endereço: http://localhost:8080/chalenge-backend/item?begindate=05-10-2016&finaldate=10-10-2016 $ O retorno é dados consumidos da API de serviço no formato Json. $ Fim
 
-- Qualidade e organização de código.
-- Aderência aos requisitos solicitados.
-- Linguagem Java 6 ou superior.
-- Fica a escolha do candidato a utilização de qualquer framework.
-
-
-Crie um Fork desse repositório e nos envie um **pull request**
-
-Não esqueça de criar um README para ensinar como rodamos seu projeto :sunglasses:
+Os parâmetros begindate (data) e finaldate (data) deveram serem informados no formato dd-MM-yyyy
