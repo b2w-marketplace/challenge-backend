@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="A1" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{dd MMM yyyy HH:mm:ss} %-4r [%t] %-5p %c - %m%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="org.apache.http" level="ERROR" />
+	<logger name="org.hibernate" level="ERROR" />
+	<root level="DEBUG">
+		<appender-ref ref="A1" />
+	</root>
+</configuration>
