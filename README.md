@@ -1,3 +1,8 @@
+#Run Project
+
+Na raiz do projeto, rodar o comando  mvn spring-boot:run
+
+
 # Desafio Backend BIT - SP
 
 Desenvolver um serviço rest que consulta a API de Item [(link da API)](http://www.mocky.io/v2/5817803a1000007d01cc7fc9) e com base no resultado realiza um filtro pela data de acordo com os parametros enviados na requisição HTTP.
@@ -50,3 +55,5 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 Crie um Fork desse repositório e nos envie um **pull request**
 
 Não esqueça de criar um README para ensinar como rodamos seu projeto :sunglasses:
+
+
