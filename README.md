@@ -44,14 +44,9 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 ]
 ```
 
-## Critérios
+## Autor
 
-- Qualidade e organização de código.
-- Aderência aos requisitos solicitados.
-- Linguagem Java 6 ou superior.
-- Fica a escolha do candidato a utilização de qualquer framework.
+### Rafael Felix de Moraes
 
+### <a href="mailto:rafaelfelix1433@gmail.com?Subject=Java%20B2W" target="_top">Envie-me um E-mail</a>
 
-Crie um Fork desse repositório e nos envie um **pull request**
-
-Não esqueça de criar um README para ensinar como rodamos seu projeto :sunglasses:
