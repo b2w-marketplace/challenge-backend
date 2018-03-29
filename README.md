@@ -2,9 +2,21 @@
 
 Backend Challenge
 
-$ Projeto desenvolvido com Spring Boot e Java 8, para executar o projeto, siga os seguintes passos:
+Projeto desenvolvido com Spring Boot e Java 8, para executar o projeto, siga os seguintes passos:
 
-$ Realize o clone do repositório e dentro do Eclipse acesse Arquivo/Importar, selecione a opção Maven/Existing Maven Projects, na próxima tela aponte para o diretório para onde foi feito o clone do projeto do git, e no final clique em Finalizar. $ abra o package br.com.b2w.app; $ Clique na classe App $ Execute o programa como se fosse um aplicativo Java, não é necessário instalar o Tomcat pois o Spring Boot já possui ele embutido. $ Clique com o botão direito do mouse  e navegue para Run As > Java Application $ No console, Aguarde o servidor subir, enquanto isso abra o browser (IE, Firefox, Chrome). $ Após o servidor ficar de pé, acesse o endereço: http://localhost:8080/backend-challenge/item?begindate=05-10-2016&finaldate=10-10-2016 $ O retorno são os dados consumidos da API de serviço no formato Json.
+- Realize o clone do repositório e dentro do Eclipse acesse Arquivo/Importar, selecione a opção Maven/Existing Maven Projects, na próxima tela aponte para o diretório para onde foi feito o clone do projeto do git, e no final clique em Finalizar. 
+
+- Abra o package br.com.b2w.app; 
+
+- Clique na classe App 
+
+- Execute o programa como se fosse um aplicativo Java, não é necessário instalar o Tomcat pois o Spring Boot já possui ele embutido. 
+
+- Clique com o botão direito do mouse  e navegue para Run As > Java Application $ No console, Aguarde o servidor subir, enquanto isso abra o browser (IE, Firefox, Chrome). 
+
+- Após o servidor ficar de pé, acesse o endereço: http://localhost:8080/backend-challenge/item?begindate=05-10-2016&finaldate=10-10-2016 
+
+- O retorno são os dados consumidos da API de serviço no formato Json conforme response abaixo.
 
 Os parâmetros begindate (data) e finaldate (data) deveram serem informados no formato dd-MM-yyyy
 
