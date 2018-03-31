@@ -1,12 +1,13 @@
-package br.com.challenge.backend.service;
+package br.com.challenge.backend.controller.service;
 
-import br.com.challenge.backend.model.Item;
+import br.com.challenge.backend.controller.model.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
@@ -55,11 +56,16 @@ public class ItemService {
 
     private List<Item> findAllItems() {
         String uri = environment.getProperty("service.item.uri");
-        ResponseEntity<List<Item>> rateResponse =
-                restTemplate.exchange(uri,
-                        HttpMethod.GET, null, new ParameterizedTypeReference<List<Item>>() {
-                        });
-        return rateResponse.getBody();
+        ResponseEntity<List<Item>> responseEntity =
+                null;
+        try {
+            responseEntity = restTemplate.exchange(uri,
+                    HttpMethod.GET, null, new ParameterizedTypeReference<List<Item>>() {
+                    });
+        } catch (RestClientException e) {
+            throw new RestClientException("Cannot connect with "+uri);
+        }
+        return responseEntity.getBody();
     }
 
 

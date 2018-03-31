@@ -1,14 +1,13 @@
-package br.com.challenge.backend.controller;
+package br.com.challenge.backend.controller.controller;
 
-import br.com.challenge.backend.model.Item;
-import br.com.challenge.backend.service.ItemService;
+import br.com.challenge.backend.controller.model.Item;
+import br.com.challenge.backend.controller.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.util.List;
 
 

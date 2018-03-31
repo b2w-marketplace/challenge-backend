@@ -1,4 +1,4 @@
-package br.com.challenge.backend.model;
+package br.com.challenge.backend.controller.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

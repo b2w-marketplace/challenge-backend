@@ -1,4 +1,4 @@
-package br.com.challenge.backend.config;
+package br.com.challenge.backend.controller.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

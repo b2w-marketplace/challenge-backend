@@ -1,4 +1,4 @@
-package br.com.challenge.backend.exception;
+package br.com.challenge.backend.controller.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
