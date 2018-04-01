@@ -2,8 +2,8 @@
 
 Entrar no diretório do projeto:
 
-mvn clean install package
-mvn spring-boot:run
+- mvn clean install package
+- mvn spring-boot:run
 
 A aplicação irá iniciar em http://localhost:8080
 
