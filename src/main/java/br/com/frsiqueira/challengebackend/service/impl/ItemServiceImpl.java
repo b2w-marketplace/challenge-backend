@@ -23,9 +23,6 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final Logger logger = LogManager.getLogger("ItemServiceImpl");
-
-
     @Override
     public List<Item> getItems(Calendar beginDate, Calendar finalDate) {
         return Arrays
