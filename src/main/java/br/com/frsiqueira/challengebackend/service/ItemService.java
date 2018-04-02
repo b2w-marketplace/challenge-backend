@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ItemService {
 
-    public List<Item> getItens(Calendar beginDate, Calendar finalDate);
+    public List<Item> getItems(Calendar beginDate, Calendar finalDate);
 
 }
 
