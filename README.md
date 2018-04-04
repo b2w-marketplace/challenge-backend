@@ -1,5 +1,5 @@
 # Challenge Backend
-Documentação descrevendo as tecnologias e utilizadas e como rodar a aplicação.
+Documentação descrevendo as tecnologias utilizadas e como rodar a aplicação.
 ### Tecnologias utilizadas
 - Java 8
 - Spring Boot 2.0
