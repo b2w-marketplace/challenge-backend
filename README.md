@@ -1,8 +1,7 @@
-# Desafio Backend BIT - SP
+# Backend Challenge BIT - SP
 
-Desenvolver um serviço rest que consulta a API de Item [(link da API)](http://www.mocky.io/v2/5817803a1000007d01cc7fc9) e com base no resultado realiza um filtro pela data de acordo com os parametros enviados na requisição HTTP.
-
-O serviço deve atender a seguinte definição:
+Develop a rest service that uses this Order API and based on the result, filters by data according to the parameters sent by HTTP request.
+The service must follow this definition:
 
 #### Request
 ```
@@ -39,14 +38,12 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 ]
 ```
 
-## Critérios
+## Criterias:
+Quality and organization of the code;
+Pay attention to the requirements;
+Use Java 6 or superior (or Elixir)
+The candidate can choose any framework
 
-- Qualidade e organização de código.
-- Aderência aos requisitos solicitados.
-- Linguagem Java 6 ou superior.
-- Fica a escolha do candidato a utilização de qualquer framework.
+Create a Fort of this project and send us a pull request
 
-
-Crie um Fork desse repositório e nos envie um **pull request**
-
-Não esqueça de criar um README para ensinar como rodamos seu projeto :sunglasses:
+Do not forgive to create a README to tell us how to run the project :sunglasses:
