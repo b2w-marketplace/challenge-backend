@@ -75,11 +75,11 @@ The name of the columns in the rowset don’t matter, but their order does.
 
 
 ## Criterias:
-Quality and organization of the code;
-Pay attention to the requirements;
-Use Java 6 or newer (or Elixir language)
-The candidate can choose any framework
-See the attachments to solve the second question (task2)
+- Quality and organization of the code;
+- Pay attention to the requirements;
+- Use Java 6 or newer (or Elixir language)
+- The candidate can choose any framework
+- See the attachments to solve the second question (task2)
 
 Create a Fork of this project and send us a pull request
 
