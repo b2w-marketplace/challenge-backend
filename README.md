@@ -67,7 +67,7 @@ Your query should return the following rowset:
 |event_type | value |
 |---------- | -----
 |2          | 2     |
-|30         | 0     |
+|3          | 0     |
 
 For example, for the event_type 2, the penultimate value is a 7 and the oldest value is 5, so the
 difference between them is 2.
