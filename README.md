@@ -38,16 +38,6 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 ]
 ```
 
-## Criterias:
-Quality and organization of the code;
-Pay attention to the requirements;
-Use Java 6 or newer (or Elixir language)
-The candidate can choose any framework
-
-Create a Fort of this project and send us a pull request
-
-Do not forget to create a README to tell us how to run the project :sunglasses:
-
 2) Given a table events with the following structure:
 create table events (
   event_type integer not null,
@@ -80,3 +70,15 @@ Your query should return the following rowset:
 For example, for the event_type 2, the penultimate value is a 7 and the oldest value is 5, so the
 difference between them is 2.
 The name of the columns in the rowset don’t matter, but their order does.
+
+
+## Criterias:
+Quality and organization of the code;
+Pay attention to the requirements;
+Use Java 6 or newer (or Elixir language)
+The candidate can choose any framework
+See the attachments to solve the second question (task2)
+
+Create a Fork of this project and send us a pull request
+
+Do not forget to create a README to tell us how to run the project :sunglasses:
