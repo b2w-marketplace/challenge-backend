@@ -39,14 +39,14 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 ```
 
 2) Given a table events with the following structure:
-'''
+```
 create table events (
   event_type integer not null,
   value integer not null,
   time timestamp not null,
   unique (event_type, time)
 );
-'''
+```
 write an SQL (MySQL) query that, for each event_type that has been registered more than once,
 returns the difference between the penultimate and the oldest value (in terms of time) . The table
 should be ordered by event_type (in ascending order).
