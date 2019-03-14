@@ -71,6 +71,7 @@ For example, given the following data:
 
 
 Your query should return the following rowset:
+
 |event_type | value |
 |---------- | -----
 |2          | 2     |
