@@ -1,6 +1,6 @@
 # Backend Challenge BIT - SP
 
-Develop a rest service that uses this Order API and based on the result, filters by data according to the parameters sent by HTTP request.
+Develop a rest service that uses this Order API and, based on the result, filters by data according to the parameters sent by HTTP request.
 The service must follow this definition:
 
 #### Request
@@ -41,7 +41,7 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 ## Criterias:
 Quality and organization of the code;
 Pay attention to the requirements;
-Use Java 6 or superior (or Elixir)
+Use Java 6 or newer (or Elixir language)
 The candidate can choose any framework
 
 Create a Fort of this project and send us a pull request
