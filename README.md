@@ -60,21 +60,21 @@ returns the difference between the penultimate and the oldest value (in terms of
 should be ordered by event_type (in ascending order).
 For example, given the following data:
 
-event_type | value  | time<br />
-----------------------------------------
-2          | 5      | 2015-05-09 12:42:00<br />
-4          | -42    | 2015-05-09 13:19:57<br />
-2          | 2      | 2015-05-09 14:48:30<br />
-2          | 7      | 2015-05-09 12:54:39<br />
-3          | 16     | 2015-05-09 13:19:57<br />
-3          | 20     | 2015-05-09 15:01:09<br />
+|event_type  | value  | time                |
+|----------- | -----  | -------------------
+|2           | 5      | 2015-05-09 12:42:00 |
+|4           | -42    | 2015-05-09 13:19:57 |
+|2           | 2      | 2015-05-09 14:48:30 |
+|2           | 7      | 2015-05-09 12:54:39 |
+|3           | 16     | 2015-05-09 13:19:57 |
+|3           | 20     | 2015-05-09 15:01:09 |
 
 
 Your query should return the following rowset:
-event_type | value<br />
-------------------- 
-2          | 2<br />
-30         | 0<br />
+|event_type | value |
+----------- | -----
+2           | 2
+30          | 0
 
 For example, for the event_type 2, the penultimate value is a 7 and the oldest value is 5, so the
 difference between them is 2.
