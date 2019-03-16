@@ -4,7 +4,7 @@ Backend Challenge
 
 Projeto desenvolvido com Spring Boot e Java 8, para executar o projeto, siga os seguintes passos:
 
-- Realize o clone do repositório e dentro do Eclipse acesse Arquivo/Importar, selecione a opção Maven/Existing Maven Projects, na próxima tela aponte para o diretório para onde foi feito o clone do projeto do git, e no final clique em Finalizar. 
+- Realize o clone do repositório e dentro da IDE desejada acesse Arquivo/Importar, selecione a opção Maven/Existing Maven Projects, na próxima tela aponte para o diretório para onde foi feito o clone do projeto do git, e no final clique em Finalizar. 
 
 - Abra o package com.rafaelfelix.b2wchallenge; 
 
