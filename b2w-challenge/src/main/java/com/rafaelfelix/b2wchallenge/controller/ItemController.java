@@ -44,12 +44,12 @@ public class ItemController {
 	 * @return List<{@link ProductDTO}> A lista de produtos populada
 	 * @throws UnknownHostException Caso o sistema não encontre a URL da Api pública
 	 */
-	private List<ProductDTO> callServiceJson() throws UnknownHostException {
+	private List<ProductDTO> callServiceJson(String apiURL) throws UnknownHostException {
 		List<ProductDTO> produtos = new ArrayList<ProductDTO>();
 		try {
 			RestTemplate template = new RestTemplate();
-			ResponseEntity<ProductDTO[]> resp = template.getForEntity(publicApiUrl, ProductDTO[].class);
-			produtos = Arrays.asList(resp.getBody());
+			ResponseEntity<ProductDTO[]> response = template.getForEntity(apiURL, ProductDTO[].class);
+			produtos = Arrays.asList(response.getBody());
 		} catch(HttpServerErrorException ex) {
 			LOGGER.error("Causa: ".concat(ex.getCause().toString()).concat(". Detalhe: ").concat(ex.getMessage()));
 			throw new HttpServerErrorException(HttpStatus.BAD_REQUEST, "Ocorreu um erro ao tentar chamar a API pública");
@@ -66,23 +66,23 @@ public class ItemController {
 	 */
 
 	@GetMapping(value = "/{begindate}/{finaldate}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<List<ProductDTO>> findByDateInterval(
+	public ResponseEntity<?> findByDateInterval(
 			@RequestParam(value = "begindate") @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate pBeginDate,
 			@RequestParam(value = "finaldate") @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate pFinalDatee) throws UnknownHostException {
 		
 		LocalDateTime beginDT = ParseDate.toLocalDateTime(pBeginDate);
 		LocalDateTime finalDT = ParseDate.toLocalDateTime(pFinalDatee);
 		
-		List<ProductDTO> listaProdutos = callServiceJson();
-		if (listaProdutos != null) {
-			
-			if(listaProdutos.size() > 0) {
-				listaProdutos = listaProdutos.stream().
+		List<ProductDTO> productsList = callServiceJson(publicApiUrl);
+		if (productsList != null) {
+			if(productsList.size() > 0) {
+				productsList = productsList.stream().
 						filter(x -> (((ProductDTO) x).getDate().isAfter(beginDT) || ((ProductDTO) x).getDate().isEqual(beginDT))
-								&& (((ProductDTO) x).getDate().isBefore(finalDT) || ((ProductDTO) x).getDate().isEqual(finalDT))).
-						collect(Collectors.toList());
+								&& (((ProductDTO) x).getDate().isBefore(finalDT) || ((ProductDTO) x).getDate().isEqual(finalDT)))
+								.collect(Collectors.toList());
 			}
 		}
-		return new ResponseEntity<List<ProductDTO>>(listaProdutos, HttpStatus.OK);
+		
+		return ResponseEntity.ok(productsList);
 	}
 }
