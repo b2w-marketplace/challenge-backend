@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 public class ProductDTO implements Serializable{
 	
@@ -11,6 +13,8 @@ public class ProductDTO implements Serializable{
 	
 	private Long code; 
 	private String name;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
 	private LocalDateTime date;
 	
 	private DimensionsDTO dimensions;
