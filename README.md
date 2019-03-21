@@ -9,7 +9,7 @@ Projeto desenvolvido com as seguintes tecnologias:
 
 Para executar o projeto, siga os seguintes passos:
 
-- Realize o clone do repositório e dentro da IDE desejada e em seguida acesse Arquivo/Importar, selecione a opção Maven/Existing Maven Projects, na próxima tela aponte para o diretório para onde foi feito o clone do projeto do git, e no final clique em Finalizar.
+- Realize o clone do repositório dentro da IDE desejada(pessoalmente prefiro o STS =P) e em seguida acesse Arquivo/Importar, selecione a opção Maven/Existing Maven Projects, na próxima tela aponte para o diretório para onde foi feito o clone do projeto do git, e no final clique em Finalizar.
 
 - Em seguida, realize o build do projeto, Clique com o botão direito do mouse sobre a pasta do projeto e navegue até Maven > Update Project. Na próxima tela, clique em OK e aguarde o build do projeto.
 
