@@ -1,5 +1,7 @@
 # Desafio Backend BIT - SP
 
+## Task 1
+
 ### Backend Challenge
 
 Projeto desenvolvido com as seguintes tecnologias:
@@ -55,6 +57,12 @@ Para executar o projeto, siga os seguintes passos:
   .
 ]
 ```
+
+## Task 2
+
+### MySQL Challenge
+
+A Resolução da task 2 se encontra dentro do diretório "resolution_task2", na raiz do repositório. Ela possui o arquivo .sql com a query desenvolvida para atender o desafio, juntamente com uma planilha contendo os resultados obtidos pela execução da query nos 4 databases disponibilizados.
 
 ## Autor
 
