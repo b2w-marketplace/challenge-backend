@@ -66,7 +66,7 @@ A Resolução da task 2 se encontra dentro do diretório "resolution_task2", na 
 
 ## Autor
 
-### Rafael Felix de Moraes
+### Rafael Felix de Moraes. All Rights Reserved
 
 ### <a href="mailto:rafaelfelix1433@gmail.com?Subject=Java%20B2W" target="_top">Envie-me um e-mail</a>
 
