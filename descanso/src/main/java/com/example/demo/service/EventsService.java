@@ -18,6 +18,13 @@ public class EventsService {
 	public Page<Events> getAll(int page, int size) {
 		return repository.findAll(PageRequest.of(page, size));
 	}
+	
+	public Events create(Events events) {
+	
+		return	repository.save(events);
+		
+		
+	}
 
 
 }

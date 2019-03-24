@@ -1,6 +1,6 @@
 package com.example.demo.domain;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +20,7 @@ public class Events  {
 	@GeneratedValue 
     private Integer id;
 
-	@Column(name = "event_type", unique = true)
+	@Column(name = "event_type")
 	@NotNull
 	private Integer eventType;
 	
@@ -29,12 +29,12 @@ public class Events  {
 	@NotNull
 	private Integer value;
 
-	@Column(name = "time", unique = true)
+	@Column(name = "time")
 	@NotNull
-	private Timestamp time;
+	private Date time;
 
 	
-	public Events(Integer eventType,Integer value, Timestamp time) {
+	public Events(Integer eventType,Integer value, Date time) {
         this.eventType = eventType;
         this.value = value;
         this.time = time;
@@ -66,11 +66,11 @@ public class Events  {
 		this.value = value;
 	}
 
-	public Timestamp getTime() {
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(Timestamp time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 	

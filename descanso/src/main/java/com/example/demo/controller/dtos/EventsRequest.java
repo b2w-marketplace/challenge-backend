@@ -1,5 +1,6 @@
 package com.example.demo.controller.dtos;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import com.example.demo.domain.Events;
@@ -9,7 +10,7 @@ public class EventsRequest {
 
 	private Integer eventType;
 
-	private Timestamp time;
+	private Date time;
 
 	private Integer value;
 
@@ -34,11 +35,11 @@ public class EventsRequest {
 		this.value = value;
 	}
 
-	public Timestamp getTime() {
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(Timestamp time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 
