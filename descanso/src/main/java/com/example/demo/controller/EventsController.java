@@ -20,11 +20,13 @@ public class EventsController {
 
 	@Autowired
 	private EventsService service;
-
+	
 	@GetMapping()
 	public Page<Events> getAll(int page, int size) {
 		return service.getAll(page, size);
 	}
+	
+	
 	
     @PostMapping
     public Events create(@RequestBody Events events) {
