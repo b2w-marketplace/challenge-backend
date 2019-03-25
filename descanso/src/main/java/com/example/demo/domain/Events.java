@@ -1,12 +1,18 @@
 package com.example.demo.domain;
 
-import java.sql.Date;
 
+import java.util.Date;
+
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +24,7 @@ public class Events  {
 
 	@Id
 	@GeneratedValue 
+	@JsonIgnore
     private Integer id;
 
 	@Column(name = "event_type")
@@ -29,13 +36,16 @@ public class Events  {
 	@NotNull
 	private Integer value;
 
-	@Column(name = "time")
-	@NotNull
+	@Basic(optional = false)
+	@Column(name = "time", insertable = false, updatable = false)
+	@JsonIgnore
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date time;
 
 	
-	public Events(Integer eventType,Integer value, Date time) {
-        this.eventType = eventType;
+	public Events(Integer id,Integer eventType,Integer value, Date time) {
+		this.id = id;
+		this.eventType = eventType;
         this.value = value;
         this.time = time;
 

@@ -26,6 +26,11 @@ public class EventsController {
 		return service.getAll(page, size);
 	}
 	
+	@GetMapping("/filters")
+	public List<Events> getAllFilters() {
+		return service.findAllEventsType();
+	}
+	
 	
 	
     @PostMapping

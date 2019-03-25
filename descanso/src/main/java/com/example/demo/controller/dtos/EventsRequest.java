@@ -16,7 +16,7 @@ public class EventsRequest {
 
 	
 	public Events toEntity(){
-        return new Events(eventType, value, time);
+        return new Events(null,eventType, value, time);
     }
 
 	public Integer getEventType() {
