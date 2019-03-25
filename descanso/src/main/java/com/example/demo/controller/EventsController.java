@@ -15,7 +15,7 @@ import com.example.demo.domain.Events;
 import com.example.demo.service.EventsService;
 
 @RestController
-@RequestMapping("/agendamento")
+@RequestMapping("/events")
 public class EventsController {
 
 	@Autowired

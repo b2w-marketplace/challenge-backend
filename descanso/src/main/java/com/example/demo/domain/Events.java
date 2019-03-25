@@ -38,7 +38,6 @@ public class Events  {
 
 	@Basic(optional = false)
 	@Column(name = "time", insertable = false, updatable = false)
-	@JsonIgnore
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date time;
 
