@@ -1,5 +1,6 @@
 package com.hashicode.backend.service
 
+import com.hashicode.backend.Constants
 import com.hashicode.backend.TestRoot
 import com.hashicode.backend.model.Item
 import com.hashicode.backend.repository.ItemRepository
@@ -8,6 +9,7 @@ import com.hashicode.backend.service.ItemService
 import org.assertj.core.util.Lists
 import org.mockito.Mockito
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.context.MessageSource
 
 import java.time.LocalDate
 
@@ -17,7 +19,10 @@ class ItemServiceTest extends TestRoot{
     private ItemService service
 
     @Autowired
-    private ItemRepositoryImpl itemRepositoryImpl;
+    private ItemRepositoryImpl itemRepositoryImpl
+
+    @Autowired
+    private MessageSource messageSource
 
     def setup(){
         ItemRepository itemRepository = Mockito.mock(ItemRepository.class);
@@ -56,7 +61,8 @@ class ItemServiceTest extends TestRoot{
         when: "Chama com inicio depois do fim"
         service.getItensBetween(LocalDate.of(2019, 3, 27), LocalDate.of(2019, 3, 26))
         then:
-            thrown IllegalArgumentException
+        IllegalArgumentException e = thrown()
+        e.message == messageSource.getMessage(Constants.MSG_START_AFTER_END, null, Locale.getDefault())
 
     }
 }
