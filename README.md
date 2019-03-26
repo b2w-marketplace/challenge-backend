@@ -17,7 +17,7 @@
     java -jar Challenge-1.0-SNAPSHOT.jar
     ```
 
-    Feito isso, o serviço estará disponível no endereço 'http://localhost:8080'
+    Feito isso, o serviço estará disponível no endereço 'http://localhost:8080/challenge-backend/item'
 
     A documentação pode ser encontrada em 'http://localhost:8080/swagger-ui.html'
 
