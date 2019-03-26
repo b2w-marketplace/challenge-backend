@@ -1,9 +1,7 @@
 package com.hashicode.backend.utils;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 /**
  *
@@ -14,7 +12,7 @@ import java.time.ZoneId;
 public class DateUtils {
 
     public static LocalDate toLocalDate(String s){
-        return LocalDateTime.ofInstant(Instant.parse(s), ZoneId.systemDefault()).toLocalDate();
+        return ZonedDateTime.parse(s).truncatedTo(ChronoUnit.DAYS).toLocalDate();
     }
 
 }

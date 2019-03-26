@@ -1,5 +1,6 @@
 package com.hashicode.backend.service;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.hashicode.backend.model.Item;
 import com.hashicode.backend.repository.ItemRepository;
@@ -20,8 +21,6 @@ import java.util.List;
 @Service
 public class ItemService {
 
-
-    @Autowired
     private ItemRepository itemRepository;
 
     /**
@@ -31,6 +30,7 @@ public class ItemService {
      * @return uma lista não vazia com os itens entre start e end
      */
     public List<Item> getItensBetween(LocalDate start, LocalDate end){
+        Preconditions.checkArgument(!start.isAfter(end));
         List<Item> itens = this.itemRepository.getItens();
         if(itens!=null){
             List<Item> result = Lists.newArrayList();
@@ -46,5 +46,8 @@ public class ItemService {
         return Collections.emptyList();
     }
 
-
+    @Autowired
+    public void setItemRepository(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
 }
