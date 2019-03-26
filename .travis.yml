@@ -1,0 +1,7 @@
+language: java
+
+jdk:
+  - oraclejdk8
+script: mvn install 
+after_success:
+  - mvn clean verify coveralls:report 

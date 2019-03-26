@@ -109,22 +109,58 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.21.0</version>
+				<version>3.0.0-M3</version>
+				<configuration>
+					<systemPropertyVariables>
+						<orderURL>http://www.mocky.io/v2/5817803a1000007d01cc7fc9</orderURL>
+					</systemPropertyVariables>
+					<useFile>false</useFile>
+					<includes>
+						<include>**/*IT.*</include>
+					</includes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>4.3.0</version>
+				<configuration>
+					<repoToken>${env.repoToken}</repoToken>
+					<sourceEncoding>UTF-8</sourceEncoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.6.201602180812</version>
 				<executions>
 					<execution>
+						<id>default-prepare-agent</id>
 						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
+							<goal>prepare-agent</goal>
 						</goals>
-						<configuration>
-							<systemPropertyVariables>
-								<orderURL>http://www.mocky.io/v2/5817803a1000007d01cc7fc9</orderURL>
-							</systemPropertyVariables>
-							<includes>
-								<include>**/*IT.*</include>
-							</includes>
-						</configuration>
+					</execution>
+					<execution>
+						<id>default-prepare-agent-integration</id>
+						<goals>
+							<goal>prepare-agent-integration</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-report-integration</id>
+						<goals>
+							<goal>report-integration</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
