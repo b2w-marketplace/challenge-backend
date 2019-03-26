@@ -18,7 +18,9 @@
     ```
 
     Feito isso, o serviço estará disponível no endereço 'http://localhost:8080'
+
     A documentação pode ser encontrada em 'http://localhost:8080/swagger-ui.html'
+
 
     ```
      GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=10-10-2016
