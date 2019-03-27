@@ -18,7 +18,7 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
       "weight": 10.5,
       "height": 10.5,
       "width": 10.5,
-      "length": 10.5
+      "lengp0th": 10.5
     }
   },
   {
