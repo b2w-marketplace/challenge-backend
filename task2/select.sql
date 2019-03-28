@@ -6,3 +6,4 @@ FROM
 	`events` e
 	GROUP BY event_type
 	HAVING returned_value IS NOT NULL
+	ORDER BY event_type	
