@@ -5,18 +5,19 @@
 ### Task 1
 
 This task has been developed using:
-    - Java 8
-    - Spring Boot Framework
-    - Gradle Build Tool
+-   Java 8
+-   Spring Boot Framework
+-   Gradle Build Tool
 
 Requirements:
-    - To run it from terminal, gradle must be previously installed.
-    - application.properties file has the Port used by this application. This same server port must be open.
-    - Both parameters 'begindate' and 'finaldate' are required for this API call and must be on format 'dd-MM-yyyy'
+-    To run it from terminal, gradle must be previously installed.
+-    'application.properties' file has the Port used by this application. This same server port must be open.
+-    Both parameters 'begindate' and 'finaldate' are required for this API call and must be on format 'dd-MM-yyyy'
 
 To run this application, you must clone this git repository project on your local computer and either
-    1) Open this project as a gradle project on your favorite IDE and run the tasks 'build' and 'bootRun'
-    2) Or open this project and run the following commands, which will do the same effect
+1) Open this project as a gradle project on your favorite IDE and run the tasks 'build' and 'bootRun'
+
+2) Or open this project and run the following commands, which will do the same effect
     ```
     gradle build
     gradle bootRun
@@ -34,8 +35,8 @@ The response will be the items filtered by dates specified.
 ### Task 2
 
 The directory task2, under root folder (challenge-backend), has 2 files:
-    1) 'task2_challenge.sql' that has the query as requested
-    1) 'task2_result.xlsx' with the results retrieved from applying the mentioned query on the table filled by all scripts task1_populate*.sql
+1) 'task2_challenge.sql' that has the query as requested
+2) 'task2_result.xlsx' with the results retrieved from applying the mentioned query on the table filled by all scripts task1_populate*.sql
 
 
 
