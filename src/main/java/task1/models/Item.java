@@ -6,11 +6,11 @@ import java.util.Date;
 
 public class Item {
     private String name;
-    private String code;
+    private int code;
     private String date;
     private Dimension dimension;
 
-    public Item(String name, String code, String date, Dimension dimension) {
+    public Item(String name, int code, String date, Dimension dimension) {
         this.name = name;
         this.code = code;
         this.date = date;
@@ -42,11 +42,11 @@ public class Item {
         this.name = name;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 

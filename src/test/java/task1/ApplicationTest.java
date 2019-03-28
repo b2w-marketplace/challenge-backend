@@ -1,29 +1,36 @@
 package task1;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import task1.controller.ItemController;
 
-import java.io.IOException;
-import java.util.Properties;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import static org.junit.Assert.*;
-
+@RunWith(SpringRunner.class)
+@WebMvcTest(ItemController.class)
 public class ApplicationTest {
 
-//    @Test
-//    public void givenUserDoesNotExists_whenUserInfoIsRetrieved_then404IsReceived() {
-//
-//        // Given
-//        Properties prop = new Properties();
-//        String serverPort = prop.getProperty("server.port");
-//        HttpUriRequest request = new HttpGet( "https://localhost:" + serverPort + "challenge-backend/item?begindate=05-10-2016&finaldate=10-10-2016");
-//
-//        // When
-//        HttpResponse httpResponse = HttpClientBuilder.create().build().execute( request );
-//
-//        // Then
-//        assertThat(
-//                httpResponse.getStatusLine().getStatusCode(),
-//                equalTo(HttpStatus.SC_NOT_FOUND));
-//    }
+    @Autowired
+    private MockMvc mvc;
+
+    @Test
+    public void shouldReturnOKStatusWithMultipleElements() throws Exception {
+        mvc.perform(get("/challenge-backend/item?begindate=05-10-2016&finaldate=10-10-2017"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(9)))
+                .andExpect(jsonPath("$[0].name", equalTo("Impressora")))
+                .andExpect(jsonPath("$[0].dimension.weight", equalTo(10.5)))
+                .andExpect(jsonPath("$[1].name", equalTo("Fifa2017")))
+                .andExpect(jsonPath("$[2].name", equalTo("Notebook")))
+                .andExpect(jsonPath("$[3].name", equalTo("Tablet")));
+    }
 
 }
