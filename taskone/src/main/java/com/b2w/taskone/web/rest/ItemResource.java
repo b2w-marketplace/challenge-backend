@@ -1,12 +1,8 @@
 package com.b2w.taskone.web.rest;
 
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,6 +31,7 @@ public class ItemResource {
     public ResponseEntity getItens(@RequestParam @DateTimeFormat(pattern = "dd-MM-yyyy") Date begindate,
             @RequestParam @DateTimeFormat(pattern = "dd-MM-yyyy") Date finaldate) {
 
+        //converte as datas passadas como parâmetro para começo do dia na data de inicio e final do dia na data de fim        
         Instant beginInstant = begindate.toInstant();
         ZonedDateTime zdtBegin = ZonedDateTime.ofInstant(beginInstant, ZoneOffset.UTC);
         zdtBegin = zdtBegin.toLocalDate().atStartOfDay(ZoneOffset.UTC);
