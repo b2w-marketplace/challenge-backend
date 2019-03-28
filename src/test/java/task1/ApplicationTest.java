@@ -27,6 +27,7 @@ public class ApplicationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(9)))
                 .andExpect(jsonPath("$[0].name", equalTo("Impressora")))
+                .andExpect(jsonPath("$[0].code", equalTo("5")))
                 .andExpect(jsonPath("$[0].dimension.weight", equalTo(10.5)))
                 .andExpect(jsonPath("$[1].name", equalTo("Fifa2017")))
                 .andExpect(jsonPath("$[2].name", equalTo("Notebook")))
