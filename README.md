@@ -1,6 +1,8 @@
 # Backend Challenge BIT - SP
 Paulo Henrique de Siqueira
+
 paulohenriqu@hotmail.com
+
 https://www.linkedin.com/in/paulohenriquesiqueira/
 
 # Task 1
@@ -21,4 +23,4 @@ GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=
 ```
 
 # Task 2
-A query sql está no arquivo answer.sql na pasta task2
+A query sql está no arquivo [answer.sql](task2/answer.sql) na pasta task2 
