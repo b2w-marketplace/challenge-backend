@@ -40,10 +40,7 @@ public class ItemResource {
         Instant finalInstant = finaldate.toInstant();
         ZonedDateTime zdtFinal = ZonedDateTime.ofInstant(finalInstant, ZoneOffset.UTC);
         zdtFinal = zdtFinal.toLocalDate().atTime(23, 59, 59).atZone(ZoneOffset.UTC);
-        Instant finalInstantFilter = zdtFinal.toInstant();
-
-        System.out.println(beginInstant);
-        System.out.println(finalInstant);
+        Instant finalInstantFilter = zdtFinal.toInstant();      
 
         List<ItemDTO> itens = itemService.getAllItens();
       
