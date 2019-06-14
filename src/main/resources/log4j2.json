@@ -1,0 +1,26 @@
+{
+  "configuration": {
+    "status": "error",
+    "name": "EfikaLog4J",
+    "packages": "br.com.b2w",
+    "ThresholdFilter": {
+      "level": "error"
+    },
+    "appenders": {
+      "Console": {
+        "name": "STDOUT",
+        "PatternLayout": {
+          "pattern": "%d [%t] %-5p %c - %m%n"
+        }
+      }
+    },
+    "loggers": {
+      "root": {
+        "level": "debug",
+        "AppenderRef": {
+          "ref": "STDOUT"
+        }
+      }
+    }
+  }
+}
