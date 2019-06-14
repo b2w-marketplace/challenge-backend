@@ -1,0 +1,20 @@
+# Utilizei o task1_populate_db4.sql
+
+# A solução encontrada foi a seguinte:
+SELECT oldest.event_type, (penultimate.value - oldest.value) AS value
+FROM events oldest
+         INNER JOIN events penultimate
+                    ON oldest.event_type = penultimate.event_type
+                        AND oldest.time = (SELECT time
+                                           FROM events temp_oldest
+                                           WHERE temp_oldest.event_type = oldest.event_type
+                                           ORDER BY time ASC
+                                           LIMIT 1)
+                        AND
+                       penultimate.time = (SELECT time
+                                           FROM events temp_penultimate
+                                           WHERE temp_penultimate.event_type = penultimate.event_type
+                                           ORDER BY time DESC
+                                           LIMIT 1 OFFSET 1)
+
+Conferido com o resultado da planilha.
