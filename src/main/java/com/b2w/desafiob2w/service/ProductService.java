@@ -37,7 +37,7 @@ public class ProductService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public B2wDto<List<Product>> findProducts(String beginDate, String finalDate){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
         RestTemplate restTemplate = new RestTemplate();
         List<Product> products = null;
