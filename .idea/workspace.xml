@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2eac71ac-cf76-476d-912c-33fae70b384b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/b2wchallenge/rafaelteixeira/backendchallenge/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/b2wchallenge/rafaelteixeira/backendchallenge/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/backend-challenge-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/backend-challenge-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/backend-challenge-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/backend-challenge-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/b2wchallenge/rafaelteixeira/backendchallenge/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/b2wchallenge/rafaelteixeira/backendchallenge/controller/ItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.b2wchallenge.rafaelteixeira.backendchallenge.BackendChallengeApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.b2wchallenge.rafaelteixeira.backendchallenge.BackendChallengeApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.b2wchallenge.rafaelteixeira.backendchallenge.BackendChallengeApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.b2wchallenge.rafaelteixeira.backendchallenge.BackendChallengeApplicationTests.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -117,7 +122,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1425" />
     <option name="y" value="19" />
     <option name="width" value="1360" />
@@ -231,12 +236,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563728001219</updated>
-      <workItem from="1563728003452" duration="2309000" />
+      <workItem from="1563728003452" duration="2567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2309000" />
+    <option name="totallyTimeSpent" value="2567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1360" y="0" width="1600" height="872" extended-state="6" />
