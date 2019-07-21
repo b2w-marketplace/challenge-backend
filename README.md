@@ -1,91 +1,46 @@
-# Backend Challenge BIT - SP
+<h1 align="center">Welcome to B2W - Backend Challenge BIT - SP 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/java-%3E%3D8-red.svg" />
+  <img src="https://img.shields.io/badge/spring--boot-%3E=2.1.6-green.svg" />
+  <img src="https://img.shields.io/badge/maven-%3E%3D3.6.0-orange.svg" />
+  <a href="https://twitter.com/teixeira_83">
+    <img alt="Twitter: teixeira_83" src="https://img.shields.io/twitter/follow/teixeira_83.svg?style=social" target="_blank" />
+  </a>
+</p>
 
-1) Develop a rest service that uses this Order API [(link)](http://www.mocky.io/v2/5817803a1000007d01cc7fc9) and, based on the result, filters by data according to the parameters sent by HTTP request.
-The service must follow this definition:
+> This project is a backend challenge from b2w group. 
+@https://github.com/b2w-marketplace
 
-#### Request
-```
-GET http://localhost:8080/challenge-backend/item?begindate=05-10-2016&finaldate=10-10-2016
-```
-#### Response
-```
-[
-  {
-    "name": "Impressora",
-    "code": "5",
-    "date": "2016-10-05T14:30:37.040Z",
-    "dimension": {
-      "weight": 10.5,
-      "height": 10.5,
-      "width": 10.5,
-      "length": 10.5
-    }
-  },
-  {
-    "name": "Fifa2017",
-    "code": "6",
-    "date": "2016-10-06T14:30:37.040Z",
-    "dimension": {
-      "weight": 10.5,
-      "height": 10.5,
-      "width": 10.5,
-      "length": 10.5
-    }
-  },
-  .
-  .
-  .
-]
+### 🏠 [Homepage](https://github.com/teixeira83/challenge-backend)
+
+## Prerequisites
+
+- JAVA >=8
+- Spring >= <a href="https://spring.io/tools">Spring Tools 4</a>
+- Maven >= <a href="https://maven.apache.org/install.html">3.6.0</a>
+
+
+## Run the Project
+
+In the project root folder:
+
+```sh
+mvn spring-boot:run
 ```
 
-## Criterias for this task:
-- Quality and organization of the code;
-- Pay attention to the requirements;
-- Use Java 6 or newer (or Elixir language)
-- The candidate can choose any framework
-
-Do not forget to create a README to tell us how to run the project :sunglasses:
-
-2) Given a table events with the following structure:
+```sh
+GET http://localhost:8080/challenge-backend/item?begindate=10-10-2016&finaldate=13-10-2016
 ```
-create table events (
-  event_type integer not null,
-  value integer not null,
-  time timestamp not null,
-  unique (event_type, time)
-);
-```
-write an SQL (MySQL) query that, for each event_type that has been registered more than once,
-returns the difference between the penultimate and the oldest value (in terms of time) . The table
-should be ordered by event_type (in ascending order).
-For example, given the following data:
+- The filter is based on two parameters: begindate and finaldate.
 
-|event_type  | value  | time                |
-|----------- | -----  | -------------------
-|2           | 5      | 2015-05-09 12:42:00 |
-|4           | -42    | 2015-05-09 13:19:57 |
-|2           | 2      | 2015-05-09 14:48:30 |
-|2           | 7      | 2015-05-09 12:54:39 |
-|3           | 16     | 2015-05-09 13:19:57 |
-|3           | 20     | 2015-05-09 15:01:09 |
+## Author
 
+👤 **Rafael Teixeira**
 
-Your query should return the following rowset:
+* Twitter: [@teixeira_83](https://twitter.com/teixeira_83)
+* Github: [@teixeira83](https://github.com/teixeira83)
 
-|event_type | value |
-|---------- | -----
-|2          | 2     |
-|3          | 0     |
+## Show your support
 
-For example, for the event_type 2, the penultimate value is a 7 and the oldest value is 5, so the
-difference between them is 2.
-The name of the columns in the rowset don’t matter, but their order does.
-
-
-## Criterias for this task:
-- See the directory task2 to solve the second question
-- Create a file and put the result of the query
-
-Create a Fork of this project and send us a pull request
-
-
+Give a ⭐️ if this project helped you!
