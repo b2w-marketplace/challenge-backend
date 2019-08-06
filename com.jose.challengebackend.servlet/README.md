@@ -13,6 +13,14 @@ As example of endpoints:
 
 **GET http://localhost:8080/com.jose.challengebackend.servlet/challenge-backend/item?begindate=05-10-2016&finaldate=10-10-2016**
 
+- You can also filter any other data in any combination you want, like:
+
+**GET http://localhost:8080/com.jose.challengebackend.servlet/challenge-backend/item?name=Notebook**
+
+**GET http://localhost:8080/com.jose.challengebackend.servlet/challenge-backend/item?width=10.5&name=Notebook&code=7&begindate=05-10-2016&finaldate=07-10-2016&height=10.5**
+
+Obs.: On date filter the begin date and final date are required, or the date filter will be ignored. And the name is comparing using **contains**.
+
 # Testing Environment
 There is a Testing Environment running in: http://138.197.129.20:8080/com.jose.challengebackend.servlet/challenge-backend/
 To use it just add the method you want, the correct call (GET) and the necessary parameters, as the given examples.
