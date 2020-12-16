@@ -1,14 +1,20 @@
 package com.leonardossev.challengebackend.service;
 
+import com.leonardossev.challengebackend.model.Dimension;
+import com.leonardossev.challengebackend.model.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.security.InvalidParameterException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(SpringExtension.class)
 public class OrderServiceImplTest {
@@ -50,12 +56,20 @@ public class OrderServiceImplTest {
     );
 
     @Test
-    public void shouldThrowExceptionWhenBeginDateIsGreaterThanFinalDate() {
-        // TODO: implement
+    public void shouldThrowExceptionWhenBeginDateIsGreaterThanFinalDate() throws InvalidParameterException {
+        var beginDate = LocalDateTime.now().plusDays(1);
+        var finalDate = LocalDateTime.now();
+
+        assertThrows(InvalidParameterException.class, () -> orderService.listOrder(beginDate, finalDate));
     }
 
     @Test
     public void shouldReturnOrderListWhenProvidedDatesAreValid() {
+        // TODO: implement
+    }
+
+    @Test
+    public void shouldReturnFilteredOrderListWhenProvidedDatesAreValid() {
         // TODO: implement
     }
 }
