@@ -22,10 +22,10 @@ public class OrderServiceImplTest {
     private final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     private final Dimension ORDER_DIMENSION =  Dimension.builder()
-        .weight(10.5)
-        .height(10.5)
-        .width(10.5)
-        .length(10.5)
+        .weight(10.5f)
+        .height(10.5f)
+        .width(10.5f)
+        .length(10.5f)
         .build();
 
     private final List<Order> ORDER_LIST = Arrays.asList(
@@ -42,8 +42,8 @@ public class OrderServiceImplTest {
             .dimension(ORDER_DIMENSION)
             .build(),
         Order.builder()
-            .name(1L)
-            .code()
+            .name("Notebook")
+            .code("7")
             .date(LocalDateTime.parse("2016-10-08 14:30:37", DATE_TIME_FORMATTER))
             .dimension(ORDER_DIMENSION)
             .build()
