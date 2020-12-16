@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.security.InvalidParameterException;
@@ -15,6 +16,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
 public class OrderServiceImplTest {
@@ -65,11 +68,23 @@ public class OrderServiceImplTest {
 
     @Test
     public void shouldReturnOrderListWhenProvidedDatesAreValid() {
-        // TODO: implement
+        var beginDate = LocalDateTime.parse("2016-10-00 00:00:00", DATE_TIME_FORMATTER);
+        var finalDate = LocalDateTime.parse("2016-10-10 00:00:00", DATE_TIME_FORMATTER);
+
+        var orderList = orderService.listOrder(beginDate, finalDate);
+
+        assertTrue(orderList instanceof List);
     }
 
     @Test
     public void shouldReturnFilteredOrderListWhenProvidedDatesAreValid() {
         // TODO: implement
+    }
+
+    private void prepareOrderList() {
+        var beginDate = LocalDateTime.parse("2016-10-00 00:00:00", DATE_TIME_FORMATTER);
+        var finalDate = LocalDateTime.parse("2016-10-10 00:00:00", DATE_TIME_FORMATTER);
+
+        Mockito.when(orderClient.listOrder(beginDate, finalDate)).thenReturn(ORDER_LIST);
     }
 }
