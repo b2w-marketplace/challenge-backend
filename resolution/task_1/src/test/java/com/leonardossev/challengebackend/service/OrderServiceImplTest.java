@@ -68,6 +68,8 @@ public class OrderServiceImplTest {
 
     @Test
     public void shouldReturnOrderListWhenProvidedDatesAreValid() {
+        prepareOrderList();
+
         var beginDate = LocalDateTime.parse("2016-10-00 00:00:00", DATE_TIME_FORMATTER);
         var finalDate = LocalDateTime.parse("2016-10-10 00:00:00", DATE_TIME_FORMATTER);
 
