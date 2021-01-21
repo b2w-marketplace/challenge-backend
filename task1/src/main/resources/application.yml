@@ -1,2 +1,5 @@
 server:
   port: 8080
+
+mocky:
+  url: http://www.mocky.io/v2
