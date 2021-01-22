@@ -23,8 +23,8 @@ public class OrderController {
     private final String patternDate = "dd-MM-yyyy";
 
     @GetMapping(value = "/item")
-    public List<OrderDTO> listOrder(@RequestParam(name = "begindate") @DateTimeFormat(pattern = patternDate) LocalDate beginDate,
-                                    @RequestParam(name = "finaldate") @DateTimeFormat(pattern = patternDate) LocalDate finalDate) {
+    public List<OrderDTO> listOrder(@RequestParam @DateTimeFormat(pattern = patternDate) LocalDate beginDate,
+                                    @RequestParam @DateTimeFormat(pattern = patternDate) LocalDate finalDate) {
         return orderService.listOrder(beginDate, finalDate);
     }
 
