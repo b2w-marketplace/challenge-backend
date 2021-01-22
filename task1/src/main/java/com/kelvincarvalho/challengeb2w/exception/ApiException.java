@@ -12,7 +12,7 @@ public class ApiException extends RuntimeException implements Serializable {
         super(msg);
         message = msg;
     }
-    
+
     public String getMessage()
 
     {
