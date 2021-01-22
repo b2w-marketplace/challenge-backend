@@ -20,6 +20,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<OrderDTO> listOrder(LocalDate beginData, LocalDate finalDate) {
+        if(beginData.isAfter(finalDate))
+            throw new ApiException("Start date must be less than end date");
 
         var listOrder = mockClient.listOrder();
 
