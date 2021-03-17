@@ -1,0 +1,6 @@
+server:
+  port: 8080
+mockyclient:
+  url: http://www.mocky.io/v2
+  fetch:
+    path: /5817803a1000007d01cc7fc9

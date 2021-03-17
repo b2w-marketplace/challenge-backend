@@ -1,3 +1,15 @@
+# Resolution
+
+* Task 1
+    * [README](task1/README.md) 
+    * [Project](task1/backendchallenge)
+  
+* Task 2
+    * [README](task2/README.md)
+    * [SQL Query](task2/query.sql)
+    * [SQL Query Results](task2/result.xlsx)
+
+------------------------------------------------------------------------------------------------------------------
 # Backend Challenge BIT - SP
 
 1) Develop a rest service that uses this Order API [(link)](http://www.mocky.io/v2/5817803a1000007d01cc7fc9) and, based on the result, filters by data according to the parameters sent by HTTP request.
