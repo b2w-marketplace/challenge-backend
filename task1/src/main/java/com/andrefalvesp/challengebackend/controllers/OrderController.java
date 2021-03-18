@@ -22,6 +22,7 @@ public class OrderController {
 
   private static final String BEGINDATE_PARAM = "beginDate";
   private static final String FINALDATE_PARAM = "finalDate";
+  private static final String DATETIME_FORMAT = "dd-MM-yyyy";
 
   private final CrudOrder crudOrder;
 
@@ -29,9 +30,9 @@ public class OrderController {
   @ResponseStatus(OK)
   public List<Order> findByDate(
       @RequestParam(name = BEGINDATE_PARAM)
-      @DateTimeFormat(pattern = "dd-MM-yyyy") final LocalDate beginDate,
+      @DateTimeFormat(pattern =DATETIME_FORMAT ) final LocalDate beginDate,
       @RequestParam(name = FINALDATE_PARAM)
-      @DateTimeFormat(pattern = "dd-MM-yyyy") final LocalDate finalDate) {
+      @DateTimeFormat(pattern = DATETIME_FORMAT) final LocalDate finalDate) {
 
     return crudOrder.findByDate(beginDate, finalDate);
   }
