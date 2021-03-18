@@ -18,20 +18,18 @@ The application is based on the following projects:
 * Test-Driven Development: technique that allows abstractions to be readily tested, as a way to ensure robust feature development, allowing failures to happen as soon as possible, so they can be fixed before detailed implementation
 
 ## How To Run Locally
-
-Run the backend application.
-Make sure you have Java and Maven installed.
+* Run the backend application. Make sure you have Java and Maven installed.
 ----
 * $ git clone https://github.com/andre-paschoal/challenge-backend  <1>
 * $ cd challenge-backend/task1 <2>
 * $ mvn spring-boot:run <3>
 ----
 <1> Clone the repository.
-<2> Switch to the `task1` folder.
+<2> Switch to the `task1` folder (root folder, same as pom.xml)
 <3> Run the application
 ----
-
 Your app should now be running on [localhost:8081](http://localhost:8081/).
+Gracefully shutdown hit `ctrl+c`.
 
 ## How to Call Endpoints
 `$ http GET:8081/challenge-backend/item?beginDate=dd-MM-yyyy&finalDate=dd-MM-yyyy`
