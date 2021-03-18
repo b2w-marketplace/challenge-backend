@@ -1,0 +1,7 @@
+server:
+  port: 8081
+  shutdown: graceful
+feign:
+  order:
+    name: OrderAPI
+    url: http://www.mocky.io/v2
