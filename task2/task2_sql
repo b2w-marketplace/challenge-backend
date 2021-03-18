@@ -1,0 +1,49 @@
+select event_type, sum(value) as value from (
+
+  select distinct
+  	event_type,
+  	value
+  from events as e
+
+  natural join
+  (
+  	select
+  	event_type,
+  	(
+        select
+  		time
+  	  from events
+  	  where event_type = c.event_type
+  	  order by time desc
+  	  limit 1,1
+  	)as penun
+      from events as c
+
+  ) as d
+
+  where e.time = d.penun
+
+  union
+
+  select
+  	event_type,
+      value *-1
+  from events as e
+
+  natural join
+
+  (
+  select
+  	event_type,
+      min(time) as oldest
+  from events
+  group by event_type
+  having count(*) >1
+  ) as min
+
+  where min.oldest = e.time
+
+) as total
+
+group by event_type
+order by event_type asc
