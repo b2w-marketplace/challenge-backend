@@ -16,6 +16,10 @@
         <groupId>org.apache.maven.plugins</groupId>
         <version>3.8.1</version>
       </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
